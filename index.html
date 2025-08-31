@@ -13,17 +13,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
             font-family: 'Dancing Script', cursive;
+            padding: 1rem;
         }
         .card {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 1rem;
-            padding: 2rem;
-            max-width: 500px;
+            padding: 1.5rem;
+            max-width: 90vw;
+            max-height: 80vh;
+            overflow-y: auto;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .dupatta {
             position: absolute;
@@ -43,12 +48,13 @@
         .message {
             opacity: 0;
             transition: opacity 1s ease-in-out;
+            margin-bottom: 1rem;
         }
         .message.show {
             opacity: 1;
         }
         .compliment {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: #FF7F50;
             margin-bottom: 1rem;
             opacity: 0;
@@ -69,29 +75,48 @@
         button {
             background: #4682B4;
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             border: none;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1rem;
             transition: background 0.3s;
+            width: fit-content;
+            margin: 0 auto;
         }
         button:hover {
             background: #5F9EA0;
+        }
+        @media (max-width: 640px) {
+            .card {
+                padding: 1rem;
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+            .compliment {
+                font-size: 1rem;
+            }
+            .message p {
+                font-size: 0.9rem;
+            }
+            button {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="dupatta"></div>
-        <h1 class="text-4xl text-pink-600 mb-6">To My Love</h1>
+        <h1 class="text-3xl text-pink-600 mb-4">To My Love</h1>
         <div id="compliment" class="compliment"></div>
         <div id="message" class="message">
-            <p class="text-lg text-gray-800">
-                My darling, I’m still utterly captivated, lost in the memory of how breathtaking facedful you looked yesterday in that coral U-neck kurta and pants. The way that vibrant hue danced across your skin, catching the light with every graceful move, was nothing short of mesmerizing. Paired with that flowing teal-grayish dupatta, draped so elegantly over your shoulders, you were a vision of pure enchantment. Each fold and sway of the fabric seemed to tell a story of your effortless charm. You were so adorable, with that radiant smile that lights up my world, and undeniably alluring—the kind of beauty that stops time and sets my heart ablaze. The way you carried yourself, with such poise and a hint of playful allure, left me speechless, my heart racing with every glance. You’re not just my dream come true, love—you’re the magic that makes every moment sparkle. Forever yours, 😘
+            <p class="text-base text-gray-800">
+                My darling, I’m still utterly captivated, lost in the memory of how breathtaking you looked yesterday in that coral U-neck kurta and pants. The way that vibrant hue danced across your skin, catching the light with every graceful move, was nothing short of mesmerizing. Paired with that flowing teal-grayish dupatta, draped so elegantly over your shoulders, you were a vision of pure enchantment. Each fold and sway of the fabric seemed to tell a story of your effortless charm. You were so adorable, with that radiant smile that lights up my world, and undeniably alluring—the kind of beauty that stops time and sets my heart ablaze. The way you carried yourself, with such poise and a hint of playful allure, left me speechless, my heart racing with every glance. You’re not just my dream come true, love—you’re the magic that makes every moment sparkle. Forever yours, 😘
             </p>
         </div>
-        <button id="revealBtn" class="mt-6">See My Heart</button>
+        <button id="revealBtn" class="mt-4">See My Heart</button>
     </div>
     <script>
         const compliments = ["Cute...", "Beautiful...", "Captivating..."];
